@@ -1,0 +1,1 @@
+This repository is for contributing code related to the online applied category theory course, which is hosted on the Azimuth Project website. 
