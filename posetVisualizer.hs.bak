@@ -109,7 +109,7 @@ partitionPoset :: Int -> PS.Poset [[Int]]
 partitionPoset n = PS.Poset (map SetPart.fromSetPartition (SetPart.setPartitions n), compareSetPartitions)
 
 --Set,Par,Rel etc
--- add the others to finish off the 16, but need their names for display purpose
+-- add the others to finish off the 16, but need their names
 -- To put into visualizer replace example with relSubCatsExample in main
 data RelSubCats = CatRel | CatPar | CatSet | CatInj | CatSurj | CatBij | CatParSurj | CatParInj deriving (Read,Eq,Show,Ord,Enum,Typeable)
 instance IsName RelSubCats where
