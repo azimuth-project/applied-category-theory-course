@@ -225,3 +225,38 @@ collage (PS.Poset (setA,poA)) (PS.Poset (setB,poB)) phi = PS.Poset (set,po)
           po (Right b1) (Right b2) = poB b1 b2
           po (Left a1) (Right b2) = phi a1 b2
           po _ _ = False
+
+-- Example is untested, probably have some arrows flipped the wrong way around
+-- didn't keep careful track of which is op and which is not.
+data FeasibilityExXSetD = North | South | East | West
+feasibilityExXSet :: [FeasibilityExXSetD]
+feasibilityExXSet = [North,South,East,West]
+feasibilityExXpo South _ = True
+feasibilityExXpo West West = True
+feasibilityExXpo West North = True
+feasibilityExXpo East East = True
+feasibilityExXpo East North = True
+feasibilityExXpo North North = True
+feasibilityExXpo _ _ = False
+feasibilityExX = PS.Poset (feasibilityExXSet,feasibilityExXpo)
+data FeasibilityExYSetD = A | B | C | D | E
+feasibilityExYSet :: [FeasibilityExYSetD]
+feasibilityExYSet = [A,B,C,D,E]
+feasibilityExYpo A _ = True
+feasibilityExYpo B B = True
+feasibilityExYpo B D = True
+feasibilityExYpo C C = True
+feasibilityExYpo D D = True
+feasibilityExYpo E E = True
+feasibilityExYpo _ _ = False
+feasibilityExY = PS.Poset (feasibilityExYSet,feasibilityExYpo)
+feasibilityExPhiHelper :: FeasibilityExXSetD -> FeasibilityExYSetD -> Bool
+feasibilityExPhiHelper South A = True
+feasibilityExPhiHelper East B = True
+feasibilityExPhiHelper North C = True
+feasibilityExPhiHelper North E = True
+feasibilityExPhiHelper _ _ = True
+feasibilityExPhi :: FeasibilityExXSetD -> FeasibilityExYSetD -> Bool
+feasibilityExPhi x1 y1 = or [(feasibilityExXpo x1 x2) && (feasibilityExYpo y2 y1) | y2 <- feasibilityExYSet, x2 <- feasibilityExXSet, (feasibilityExPhiHelper x2 y2)]
+feasibilityEx :: PS.Poset (Either FeasibilityExXSetD FeasibilityExYSetD)
+feasibilityEx = collage feasibilityExX feasibilityExY feasibilityExPhi
