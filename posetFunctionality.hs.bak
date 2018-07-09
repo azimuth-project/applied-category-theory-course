@@ -206,8 +206,7 @@ bennettExample3 = addReaction bennettExample2 myThree ((1:-1:-0:-Nil),(0:-0:-2:-
 -- teleportation
 bennettExample = addReaction bennettExample3 myThree ((0:-1:-2:-Nil),(1:-0:-0:-Nil))
 
--- The ordinal sum of two posets, put everything in Y on top of everything in X
--- actually could write as a special case of collage where phi(a,b)=True
+-- |The ordinal sum of two posets
 osum :: PS.Poset a -> PS.Poset b -> PS.Poset (Either a b)
 osum (PS.Poset (setA,poA)) (PS.Poset (setB,poB)) = PS.Poset (set,po)
     where set = map Left setA ++ map Right setB
