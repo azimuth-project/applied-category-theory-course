@@ -1,0 +1,1708 @@
+
+==================== FINAL INTERFACE ====================
+2018-06-30 21:16:59.857794 UTC
+
+interface applied-category-theory-course-0.1.0.0-IH3FBuu09qbANFynDqfOPB:Quantale 8022
+  interface hash: be3a6798635815f895afd0cc08a70571
+  ABI hash: b0d2018193b0971fe1f310245a61dbd6
+  export-list hash: f9c9a9c3fc74ea7ec17975b20c88a866
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 3ff2b8fdb18cf427ec5980b706d35542
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Quantale.allVertices
+  Quantale.example
+  Quantale.example2
+  Quantale.greatestLowerBound
+  Quantale.multiplyQMatrices
+  Quantale.powerQMatrices
+  Quantale.weightGraph
+  Quantale.Cost
+  Quantale.Letters{Quantale.Alpha Quantale.Beta Quantale.Gamma}
+  Quantale.MyVertices{Quantale.VertexX Quantale.VertexY Quantale.VertexZ}
+  Quantale.PowerSetStrings
+  Quantale.UnitalQuantale{Quantale.monoidal Quantale.myJoin Quantale.po Quantale.unit}
+module dependencies:
+package dependencies: array-0.5.2.0 base-4.10.1.0*
+                      containers-0.6.0.1 deepseq-1.4.3.0 ghc-prim-0.5.1.1
+                      integer-gmp-1.0.1.0
+orphans: base-4.10.1.0:GHC.Float base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Complex base-4.10.1.0:Data.Either
+                         base-4.10.1.0:Data.Functor.Compose base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity
+                         base-4.10.1.0:Data.Functor.Product base-4.10.1.0:Data.Functor.Sum
+                         base-4.10.1.0:Data.List.NonEmpty base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Semigroup base-4.10.1.0:Data.Type.Equality
+                         base-4.10.1.0:Data.Version base-4.10.1.0:Data.Void
+                         base-4.10.1.0:GHC.Exts base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats containers-0.6.0.1:Data.Set.Internal
+import  -/  base-4.10.1.0:Data.Maybe 07738c5485acb328136bb15596f8b845
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
+import  -/  base-4.10.1.0:GHC.Num 6e1dc5d36d99a802edb39b92bb1923b8
+import  -/  base-4.10.1.0:GHC.Read 0abfbe8a9b13202e313efc3bc2f2a3e6
+import  -/  base-4.10.1.0:GHC.Show 0a8ce2b5e533d1c2cfb7954e6736be45
+import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
+import  -/  containers-0.6.0.1:Data.Set 952f57414a0f12b87b657e7b8931daf3
+import  -/  containers-0.6.0.1:Data.Set.Internal b956f7cde8c4469506e5cb5f72ae3c5c
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
+import  -/  ghc-prim-0.5.1.1:GHC.Types b1fd0716441595db508c1a74387bf394
+e83cecf25cd235b488cd0c0da47e1444
+  $fEqLetters :: GHC.Classes.Eq Quantale.Letters
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.Letters
+                  Quantale.$fEqLetters_$c==
+                  Quantale.$fEqLetters_$c/= -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fEqLetters_$c/= ::
+    Quantale.Letters -> Quantale.Letters -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Quantale.Letters) (b :: Quantale.Letters) ->
+                 case a of wild {
+                   Quantale.Alpha
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Quantale.Alpha -> GHC.Types.False }
+                   Quantale.Beta
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Quantale.Beta -> GHC.Types.False }
+                   Quantale.Gamma
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Quantale.Gamma -> GHC.Types.False } }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fEqLetters_$c== ::
+    Quantale.Letters -> Quantale.Letters -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Quantale.Letters) (ds1 :: Quantale.Letters) ->
+                 case ds of wild {
+                   Quantale.Alpha
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Quantale.Alpha -> GHC.Types.True }
+                   Quantale.Beta
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Quantale.Beta -> GHC.Types.True }
+                   Quantale.Gamma
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Quantale.Gamma -> GHC.Types.True } }) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fEqMyVertices :: GHC.Classes.Eq Quantale.MyVertices
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.MyVertices
+                  Quantale.$fEqMyVertices_$c==
+                  Quantale.$fEqMyVertices_$c/= -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fEqMyVertices_$c/= ::
+    Quantale.MyVertices -> Quantale.MyVertices -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Quantale.MyVertices) (b :: Quantale.MyVertices) ->
+                 case a of wild {
+                   Quantale.VertexX
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Quantale.VertexX -> GHC.Types.False }
+                   Quantale.VertexY
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Quantale.VertexY -> GHC.Types.False }
+                   Quantale.VertexZ
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Quantale.VertexZ -> GHC.Types.False } }) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fEqMyVertices_$c== ::
+    Quantale.MyVertices -> Quantale.MyVertices -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Quantale.MyVertices) (ds1 :: Quantale.MyVertices) ->
+                 case ds of wild {
+                   Quantale.VertexX
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Quantale.VertexX -> GHC.Types.True }
+                   Quantale.VertexY
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Quantale.VertexY -> GHC.Types.True }
+                   Quantale.VertexZ
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Quantale.VertexZ -> GHC.Types.True } }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fOrdLetters :: GHC.Classes.Ord Quantale.Letters
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.Letters
+                  Quantale.$fEqLetters
+                  Quantale.$fOrdLetters_$ccompare
+                  Quantale.$fOrdLetters_$c<
+                  Quantale.$fOrdLetters_$c<=
+                  Quantale.$fOrdLetters_$c>
+                  Quantale.$fOrdLetters_$c>=
+                  Quantale.$fOrdLetters_$cmax
+                  Quantale.$fOrdLetters_$cmin -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fOrdLetters_$c< ::
+    Quantale.Letters -> Quantale.Letters -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Quantale.Letters) (b :: Quantale.Letters) ->
+                 case a of wild {
+                   Quantale.Alpha
+                   -> case b of wild1 {
+                        Quantale.Alpha -> GHC.Types.False
+                        Quantale.Beta -> GHC.Types.True
+                        Quantale.Gamma -> GHC.Types.True }
+                   Quantale.Beta
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False Quantale.Gamma -> GHC.Types.True }
+                   Quantale.Gamma
+                   -> case b of wild1 { DEFAULT -> GHC.Types.False } }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fOrdLetters_$c<= ::
+    Quantale.Letters -> Quantale.Letters -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Quantale.Letters) (b :: Quantale.Letters) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> GHC.Types.Bool
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case a of wild {
+                       Quantale.Alpha
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 0#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False }
+                       Quantale.Beta
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 1#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False }
+                       Quantale.Gamma
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 2#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False } }
+                 } in
+                 case b of wild {
+                   Quantale.Alpha -> $j 0#
+                   Quantale.Beta -> $j 1#
+                   Quantale.Gamma -> $j 2# }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fOrdLetters_$c> ::
+    Quantale.Letters -> Quantale.Letters -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (a :: Quantale.Letters) (b :: Quantale.Letters) ->
+                 Quantale.$fOrdLetters_$c< b a) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fOrdLetters_$c>= ::
+    Quantale.Letters -> Quantale.Letters -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Quantale.Letters) (b :: Quantale.Letters) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> GHC.Types.Bool
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case b of wild {
+                       Quantale.Alpha
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 0#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False }
+                       Quantale.Beta
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 1#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False }
+                       Quantale.Gamma
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 2#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False } }
+                 } in
+                 case a of wild {
+                   Quantale.Alpha -> $j 0#
+                   Quantale.Beta -> $j 1#
+                   Quantale.Gamma -> $j 2# }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fOrdLetters_$ccompare ::
+    Quantale.Letters -> Quantale.Letters -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Quantale.Letters) (b :: Quantale.Letters) ->
+                 case a of wild {
+                   Quantale.Alpha
+                   -> case b of wild1 {
+                        Quantale.Alpha -> GHC.Types.EQ
+                        Quantale.Beta -> GHC.Types.LT
+                        Quantale.Gamma -> GHC.Types.LT }
+                   Quantale.Beta
+                   -> case b of wild1 {
+                        Quantale.Alpha -> GHC.Types.GT
+                        Quantale.Beta -> GHC.Types.EQ
+                        Quantale.Gamma -> GHC.Types.LT }
+                   Quantale.Gamma
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT Quantale.Gamma -> GHC.Types.EQ } }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fOrdLetters_$cmax ::
+    Quantale.Letters -> Quantale.Letters -> Quantale.Letters
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U>,
+     Unfolding: (\ (x :: Quantale.Letters) (y :: Quantale.Letters) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> Quantale.Letters
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case x of wild {
+                       Quantale.Alpha
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 0#) of wild1 {
+                            GHC.Types.False -> y GHC.Types.True -> Quantale.Alpha }
+                       Quantale.Beta
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 1#) of wild1 {
+                            GHC.Types.False -> y GHC.Types.True -> Quantale.Beta }
+                       Quantale.Gamma
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 2#) of wild1 {
+                            GHC.Types.False -> y GHC.Types.True -> Quantale.Gamma } }
+                 } in
+                 case y of wild {
+                   Quantale.Alpha -> $j 0#
+                   Quantale.Beta -> $j 1#
+                   Quantale.Gamma -> $j 2# }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fOrdLetters_$cmin ::
+    Quantale.Letters -> Quantale.Letters -> Quantale.Letters
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U>,
+     Unfolding: (\ (x :: Quantale.Letters) (y :: Quantale.Letters) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> Quantale.Letters
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case x of wild {
+                       Quantale.Alpha
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 0#) of wild1 {
+                            GHC.Types.False -> Quantale.Alpha GHC.Types.True -> y }
+                       Quantale.Beta
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 1#) of wild1 {
+                            GHC.Types.False -> Quantale.Beta GHC.Types.True -> y }
+                       Quantale.Gamma
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 2#) of wild1 {
+                            GHC.Types.False -> Quantale.Gamma GHC.Types.True -> y } }
+                 } in
+                 case y of wild {
+                   Quantale.Alpha -> $j 0#
+                   Quantale.Beta -> $j 1#
+                   Quantale.Gamma -> $j 2# }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters :: GHC.Read.Read Quantale.Letters
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.Letters
+                  Quantale.$fReadLetters_$creadsPrec
+                  Quantale.$fReadLetters_$creadList
+                  Quantale.$fReadLetters1
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Quantale.Letters>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Quantale.Letters>_R)))
+                  Quantale.$fReadLetters_$creadListPrec -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Quantale.Letters -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2,
+     Unfolding: (GHC.Read.$fRead()6
+                   @ Quantale.Letters
+                   Quantale.$fReadLetters2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Quantale.Letters>_R))) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters10 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Quantale.Letters -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (k :: Quantale.Letters -> Text.ParserCombinators.ReadP.P b) ->
+                 k Quantale.Beta) -}
+4a3d1707d11da77b18a2fae2cab03042
+  $fReadLetters11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Quantale.$fReadLetters12) -}
+d55fecc297db0412ab7bf32138f48e86
+  $fReadLetters12 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Beta"#) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters13 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)
+  {- Strictness: m,
+     Unfolding: ((Quantale.$fReadLetters15,
+                  Quantale.$fReadLetters14
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Quantale.Letters>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Quantale.Letters>_R))))) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters14 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Quantale.Letters -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (k :: Quantale.Letters -> Text.ParserCombinators.ReadP.P b) ->
+                 k Quantale.Alpha) -}
+c16558bac61375484f831dbe3f572e72
+  $fReadLetters15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Quantale.$fReadLetters16) -}
+2a359b8ec0fcddda7a99a60bad0b5d4a
+  $fReadLetters16 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Alpha"#) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters17 ::
+    Text.ParserCombinators.ReadP.P [Quantale.Letters]
+  {- Unfolding: ((Quantale.$fReadLetters_$creadListPrec
+                    `cast`
+                  (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                       <[Quantale.Letters]>_R)
+                    GHC.Read.$fRead()8)
+                   `cast`
+                 (Text.ParserCombinators.ReadP.N:ReadP[0] <[Quantale.Letters]>_R)
+                   @ [Quantale.Letters]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Quantale.Letters])) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Quantale.Letters
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec) ->
+                 GHC.Read.choose2
+                   @ Quantale.Letters
+                   Quantale.$fReadLetters_sps
+                   eta) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters3 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)
+                   Quantale.$fReadLetters9
+                   Quantale.$fReadLetters4) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters4 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)
+                   Quantale.$fReadLetters5
+                   (GHC.Types.[]
+                      @ (GHC.Base.String,
+                         Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters))) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters5 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)
+  {- Strictness: m,
+     Unfolding: ((Quantale.$fReadLetters7,
+                  Quantale.$fReadLetters6
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Quantale.Letters>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Quantale.Letters>_R))))) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters6 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Quantale.Letters -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (k :: Quantale.Letters -> Text.ParserCombinators.ReadP.P b) ->
+                 k Quantale.Gamma) -}
+661daec14f2b9b983004e0d8d4d09392
+  $fReadLetters7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Quantale.$fReadLetters8) -}
+1ec944db055aed20e7bef2eea90d1304
+  $fReadLetters8 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Gamma"#) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters9 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)
+  {- Strictness: m,
+     Unfolding: ((Quantale.$fReadLetters11,
+                  Quantale.$fReadLetters10
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Quantale.Letters>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Quantale.Letters>_R))))) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Quantale.Letters]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Quantale.Letters]
+                   Quantale.$fReadLetters17) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Quantale.Letters]
+  {- Unfolding: (GHC.Read.list
+                   @ Quantale.Letters
+                   Quantale.$fReadLetters1
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <Quantale.Letters>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <Quantale.Letters>_R)))) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS Quantale.Letters
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (n :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Quantale.Letters
+                   (GHC.Read.$fRead()6
+                      @ Quantale.Letters
+                      Quantale.$fReadLetters2
+                        `cast`
+                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                <Quantale.Letters>_R))
+                      n
+                      @ Quantale.Letters
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Quantale.Letters))) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fReadLetters_sps ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.Letters)
+                   Quantale.$fReadLetters13
+                   Quantale.$fReadLetters3) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices :: GHC.Read.Read Quantale.MyVertices
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.MyVertices
+                  Quantale.$fReadMyVertices_$creadsPrec
+                  Quantale.$fReadMyVertices_$creadList
+                  Quantale.$fReadMyVertices1
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Quantale.MyVertices>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Quantale.MyVertices>_R)))
+                  Quantale.$fReadMyVertices_$creadListPrec -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Quantale.MyVertices -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2,
+     Unfolding: (GHC.Read.$fRead()6
+                   @ Quantale.MyVertices
+                   Quantale.$fReadMyVertices2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Quantale.MyVertices>_R))) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices10 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Quantale.MyVertices -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (k :: Quantale.MyVertices -> Text.ParserCombinators.ReadP.P b) ->
+                 k Quantale.VertexY) -}
+bc334e3890c3678a389e600c7ea4e529
+  $fReadMyVertices11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Quantale.$fReadMyVertices12) -}
+f0ed5cbece3ac88e85b7dfec92dd69ad
+  $fReadMyVertices12 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("VertexY"#) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices13 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)
+  {- Strictness: m,
+     Unfolding: ((Quantale.$fReadMyVertices15,
+                  Quantale.$fReadMyVertices14
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Quantale.MyVertices>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Quantale.MyVertices>_R))))) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices14 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Quantale.MyVertices -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (k :: Quantale.MyVertices -> Text.ParserCombinators.ReadP.P b) ->
+                 k Quantale.VertexX) -}
+67f97790cf34ad6f136b3781a433af9d
+  $fReadMyVertices15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Quantale.$fReadMyVertices16) -}
+37abfc0dba511c9ee57a52fc95c75f5f
+  $fReadMyVertices16 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("VertexX"#) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices17 ::
+    Text.ParserCombinators.ReadP.P [Quantale.MyVertices]
+  {- Unfolding: ((Quantale.$fReadMyVertices_$creadListPrec
+                    `cast`
+                  (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                       <[Quantale.MyVertices]>_R)
+                    GHC.Read.$fRead()8)
+                   `cast`
+                 (Text.ParserCombinators.ReadP.N:ReadP[0] <[Quantale.MyVertices]>_R)
+                   @ [Quantale.MyVertices]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Quantale.MyVertices])) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Quantale.MyVertices
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec) ->
+                 GHC.Read.choose2
+                   @ Quantale.MyVertices
+                   Quantale.$fReadMyVertices_sps
+                   eta) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices3 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)
+                   Quantale.$fReadMyVertices9
+                   Quantale.$fReadMyVertices4) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices4 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)
+                   Quantale.$fReadMyVertices5
+                   (GHC.Types.[]
+                      @ (GHC.Base.String,
+                         Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices))) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices5 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)
+  {- Strictness: m,
+     Unfolding: ((Quantale.$fReadMyVertices7,
+                  Quantale.$fReadMyVertices6
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Quantale.MyVertices>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Quantale.MyVertices>_R))))) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices6 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Quantale.MyVertices -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (k :: Quantale.MyVertices -> Text.ParserCombinators.ReadP.P b) ->
+                 k Quantale.VertexZ) -}
+254d0a2ab1f813edd78be23038742d49
+  $fReadMyVertices7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Quantale.$fReadMyVertices8) -}
+1ac7873f7fa6bf6411a1f56cc77a71e4
+  $fReadMyVertices8 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("VertexZ"#) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices9 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)
+  {- Strictness: m,
+     Unfolding: ((Quantale.$fReadMyVertices11,
+                  Quantale.$fReadMyVertices10
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Quantale.MyVertices>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Quantale.MyVertices>_R))))) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Quantale.MyVertices]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Quantale.MyVertices]
+                   Quantale.$fReadMyVertices17) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Quantale.MyVertices]
+  {- Unfolding: (GHC.Read.list
+                   @ Quantale.MyVertices
+                   Quantale.$fReadMyVertices1
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <Quantale.MyVertices>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <Quantale.MyVertices>_R)))) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS Quantale.MyVertices
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (n :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Quantale.MyVertices
+                   (GHC.Read.$fRead()6
+                      @ Quantale.MyVertices
+                      Quantale.$fReadMyVertices2
+                        `cast`
+                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                <Quantale.MyVertices>_R))
+                      n
+                      @ Quantale.MyVertices
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Quantale.MyVertices))) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fReadMyVertices_sps ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Quantale.MyVertices)
+                   Quantale.$fReadMyVertices13
+                   Quantale.$fReadMyVertices3) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fShowLetters :: GHC.Show.Show Quantale.Letters
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.Letters
+                  Quantale.$fShowLetters_$cshowsPrec
+                  Quantale.$fShowLetters_$cshow
+                  Quantale.$fShowLetters_$cshowList -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fShowLetters_$cshow :: Quantale.Letters -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Quantale.Letters) ->
+                 case x of wild {
+                   Quantale.Alpha -> Quantale.$fReadLetters15
+                   Quantale.Beta -> Quantale.$fReadLetters11
+                   Quantale.Gamma -> Quantale.$fReadLetters7 }) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fShowLetters_$cshowList :: [Quantale.Letters] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Quantale.Letters
+                   Quantale.$w$cshowsPrec) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $fShowLetters_$cshowsPrec ::
+    GHC.Types.Int -> Quantale.Letters -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Quantale.Letters)
+                   (w2 :: GHC.Base.String) ->
+                 Quantale.$w$cshowsPrec w1 w2) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fShowMyVertices :: GHC.Show.Show Quantale.MyVertices
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.MyVertices
+                  Quantale.$fShowMyVertices_$cshowsPrec
+                  Quantale.$fShowMyVertices_$cshow
+                  Quantale.$fShowMyVertices_$cshowList -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fShowMyVertices_$cshow :: Quantale.MyVertices -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Quantale.MyVertices) ->
+                 case x of wild {
+                   Quantale.VertexX -> Quantale.$fReadMyVertices15
+                   Quantale.VertexY -> Quantale.$fReadMyVertices11
+                   Quantale.VertexZ -> Quantale.$fReadMyVertices7 }) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fShowMyVertices_$cshowList ::
+    [Quantale.MyVertices] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Quantale.MyVertices
+                   Quantale.$w$cshowsPrec1) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $fShowMyVertices_$cshowsPrec ::
+    GHC.Types.Int -> Quantale.MyVertices -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Quantale.MyVertices)
+                   (w2 :: GHC.Base.String) ->
+                 Quantale.$w$cshowsPrec1 w1 w2) -}
+c16dac2eeb6b8d6291902050f72e2020
+  $fUnitalQuantaleMaybe :: Quantale.UnitalQuantale Quantale.Cost
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.Cost
+                  Quantale.$fUnitalQuantaleMaybe_$cunit
+                  Quantale.$fUnitalQuantaleMaybe_$cpo
+                  Quantale.$fUnitalQuantaleMaybe_$cmonoidal
+                  Quantale.$fUnitalQuantaleMaybe_$cmyJoin -}
+4636da5ce2edaae85533c52b264a0772
+  $fUnitalQuantaleMaybe1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+a96c1ca45e7ce2177544f264f6181ad8
+  $fUnitalQuantaleMaybe_$cmonoidal ::
+    Quantale.Cost -> Quantale.Cost -> Quantale.Cost
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Quantale.Cost) (ds1 :: GHC.Base.Maybe GHC.Types.Int) ->
+                 case ds1 of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ GHC.Types.Int
+                   GHC.Base.Just ipv
+                   -> case ds of wild1 {
+                        GHC.Base.Nothing -> GHC.Base.Nothing @ GHC.Types.Int
+                        GHC.Base.Just x
+                        -> GHC.Base.Just
+                             @ GHC.Types.Int
+                             (GHC.Num.$fNumInt_$c+ x ipv) } }) -}
+103198ebaaa75ef61219332d55581a90
+  $fUnitalQuantaleMaybe_$cmyJoin :: [Quantale.Cost] -> Quantale.Cost
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+da6a966b41275659dcdf8baa1ca1401d
+  $fUnitalQuantaleMaybe_$cpo ::
+    Quantale.Cost -> Quantale.Cost -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: GHC.Base.Maybe GHC.Types.Int)
+                   (ds1 :: GHC.Base.Maybe GHC.Types.Int) ->
+                 case ds of wild {
+                   GHC.Base.Nothing -> case ds1 of wild1 { DEFAULT -> GHC.Types.True }
+                   GHC.Base.Just x
+                   -> case ds1 of wild1 {
+                        GHC.Base.Nothing -> GHC.Types.False
+                        GHC.Base.Just y -> GHC.Classes.geInt x y } }) -}
+8e56a9277b114e0f6e78d030d692023b
+  $fUnitalQuantaleMaybe_$cunit :: Quantale.Cost
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just
+                   @ GHC.Types.Int
+                   Quantale.$fUnitalQuantaleMaybe1) -}
+c16dac2eeb6b8d6291902050f72e2020
+  $fUnitalQuantaleSet ::
+    Quantale.UnitalQuantale Quantale.PowerSetStrings
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Quantale.PowerSetStrings
+                  Quantale.$fUnitalQuantaleSet_$cunit
+                  Quantale.$fUnitalQuantaleSet_$cpo
+                  Quantale.$fUnitalQuantaleSet_$cmonoidal
+                  Quantale.$fUnitalQuantaleSet_$cmyJoin -}
+91e037d05dd1f8ab6276676b75c21c64
+  $fUnitalQuantaleSet1 :: GHC.Types.Bool
+  {- Unfolding: (Quantale.$fUnitalQuantaleSet_$sisSubsetOfX
+                   (Data.Set.Internal.Tip @ [Quantale.Letters])
+                   (Data.Set.Internal.Tip @ [Quantale.Letters])) -}
+948222e83c3fb19773fd473d3be4f2cb
+  $fUnitalQuantaleSet_$cmonoidal ::
+    Quantale.PowerSetStrings
+    -> Quantale.PowerSetStrings -> Quantale.PowerSetStrings
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ (a :: Quantale.PowerSetStrings)
+                   (b :: Quantale.PowerSetStrings) ->
+                 letrec {
+                   go3 :: [[Quantale.Letters]]
+                          -> Data.Set.Internal.Set [Quantale.Letters] -> [[Quantale.Letters]]
+                     {- Arity: 2, Strictness: <L,1*U><S,1*U> -}
+                   = \ (z' :: [[Quantale.Letters]])
+                       (ds :: Data.Set.Internal.Set [Quantale.Letters]) ->
+                     case ds of wild {
+                       Data.Set.Internal.Bin dt x l r
+                       -> go3
+                            (letrec {
+                               go2 :: [[Quantale.Letters]]
+                                      -> Data.Set.Internal.Set [Quantale.Letters]
+                                      -> [[Quantale.Letters]]
+                                 {- Arity: 2, Strictness: <L,1*U><S,1*U> -}
+                               = \ (z'1 :: [[Quantale.Letters]])
+                                   (ds1 :: Data.Set.Internal.Set [Quantale.Letters]) ->
+                                 case ds1 of wild1 {
+                                   Data.Set.Internal.Bin dt1 x1 l1 r1
+                                   -> go2
+                                        (GHC.Types.:
+                                           @ [Quantale.Letters]
+                                           (GHC.Base.++ @ Quantale.Letters x x1)
+                                           (go2 z'1 r1))
+                                        l1
+                                   Data.Set.Internal.Tip -> z'1 }
+                             } in
+                             go2 (go3 z' r) b)
+                            l
+                       Data.Set.Internal.Tip -> z' }
+                 } in
+                 Quantale.$fUnitalQuantaleSet_$sfromList
+                   (go3 (GHC.Types.[] @ [Quantale.Letters]) a)) -}
+6e2f052f829db16bcea778bb0389a980
+  $fUnitalQuantaleSet_$cmyJoin ::
+    [Quantale.PowerSetStrings] -> Quantale.PowerSetStrings
+  {- Arity: 1,
+     Unfolding: (GHC.List.foldl'
+                   @ (Data.Set.Internal.Set [Quantale.Letters])
+                   @ (Data.Set.Internal.Set [Quantale.Letters])
+                   Quantale.$fUnitalQuantaleSet_$sunion
+                   (Data.Set.Internal.Tip @ [Quantale.Letters])) -}
+949dfd646a770f32efa7e5b02eebc2eb
+  $fUnitalQuantaleSet_$cpo ::
+    Quantale.PowerSetStrings
+    -> Quantale.PowerSetStrings -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (a :: Quantale.PowerSetStrings)
+                   (b :: Quantale.PowerSetStrings) ->
+                 Quantale.$fUnitalQuantaleSet_$sisSubsetOf b a) -}
+3fbfd4d29dcee8df10159987c9bbd9d4
+  $fUnitalQuantaleSet_$cunit :: Quantale.PowerSetStrings
+  {- Unfolding: (Quantale.$fUnitalQuantaleSet_$sfromList
+                   (GHC.Types.[] @ [Quantale.Letters])) -}
+48ede51709943b4e6122f0f870177373
+  $fUnitalQuantaleSet_$s$fEq[] :: GHC.Classes.Eq [Quantale.Letters]
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ [Quantale.Letters]
+                  (GHC.Classes.$fEq[]_$c== @ Quantale.Letters Quantale.$fEqLetters)
+                  Quantale.$fUnitalQuantaleSet_$s$fEq[]_$c/= -}
+61bca5fea13a10e190493b46a103f30b
+  $fUnitalQuantaleSet_$s$fEq[]_$c/= ::
+    [Quantale.Letters] -> [Quantale.Letters] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                 case GHC.Classes.$fEq[]_$c==
+                        @ Quantale.Letters
+                        Quantale.$fEqLetters
+                        x
+                        y of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+65d658cf8a5bc49cfae38bd4289f3b9a
+  $fUnitalQuantaleSet_$s$fOrd[] :: GHC.Classes.Ord [Quantale.Letters]
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ [Quantale.Letters]
+                  Quantale.$fUnitalQuantaleSet_$s$fEq[]
+                  (GHC.Classes.$fOrd[]_$ccompare
+                     @ Quantale.Letters
+                     Quantale.$fOrdLetters)
+                  (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                   case GHC.Classes.$fOrd[]_$ccompare
+                          @ Quantale.Letters
+                          Quantale.$fOrdLetters
+                          x
+                          y of wild {
+                     DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True })
+                  (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                   case GHC.Classes.$fOrd[]_$ccompare
+                          @ Quantale.Letters
+                          Quantale.$fOrdLetters
+                          x
+                          y of wild {
+                     DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False })
+                  (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                   case GHC.Classes.$fOrd[]_$ccompare
+                          @ Quantale.Letters
+                          Quantale.$fOrdLetters
+                          x
+                          y of wild {
+                     DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True })
+                  (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                   case GHC.Classes.$fOrd[]_$ccompare
+                          @ Quantale.Letters
+                          Quantale.$fOrdLetters
+                          x
+                          y of wild {
+                     DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False })
+                  (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                   case GHC.Classes.$fOrd[]_$ccompare
+                          @ Quantale.Letters
+                          Quantale.$fOrdLetters
+                          x
+                          y of wild {
+                     DEFAULT -> y GHC.Types.GT -> x })
+                  (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                   case GHC.Classes.$fOrd[]_$ccompare
+                          @ Quantale.Letters
+                          Quantale.$fOrdLetters
+                          x
+                          y of wild {
+                     DEFAULT -> x GHC.Types.GT -> y }) -}
+b1190580118c2febfd919342841a8c27
+  $fUnitalQuantaleSet_$sfromList ::
+    [[Quantale.Letters]] -> Data.Set.Internal.Set [Quantale.Letters]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [[Quantale.Letters]]) ->
+                 case ds of wild {
+                   [] -> Data.Set.Internal.Tip @ [Quantale.Letters]
+                   : x ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> case x of dt { DEFAULT ->
+                           Data.Set.Internal.Bin
+                             @ [Quantale.Letters]
+                             1#
+                             dt
+                             (Data.Set.Internal.Tip @ [Quantale.Letters])
+                             (Data.Set.Internal.Tip @ [Quantale.Letters]) }
+                        : ipv ipv1
+                        -> case GHC.Classes.$fOrd[]_$ccompare
+                                  @ Quantale.Letters
+                                  Quantale.$fOrdLetters
+                                  x
+                                  ipv of wild2 {
+                             DEFAULT
+                             -> case x of dt { DEFAULT ->
+                                Quantale.$fUnitalQuantaleSet_go
+                                  wild1
+                                  (Data.Set.Internal.Bin
+                                     @ [Quantale.Letters]
+                                     1#
+                                     dt
+                                     (Data.Set.Internal.Tip @ [Quantale.Letters])
+                                     (Data.Set.Internal.Tip @ [Quantale.Letters])) }
+                             GHC.Types.LT
+                             -> case x of dt { DEFAULT ->
+                                Quantale.$wgo3
+                                  1#
+                                  (Data.Set.Internal.Bin
+                                     @ [Quantale.Letters]
+                                     1#
+                                     dt
+                                     (Data.Set.Internal.Tip @ [Quantale.Letters])
+                                     (Data.Set.Internal.Tip @ [Quantale.Letters]))
+                                  wild1 } } } }) -}
+d549279193b1e2038c3da79a8165900d
+  $fUnitalQuantaleSet_$sisSubsetOf ::
+    Data.Set.Internal.Set [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters] -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (t1 :: Data.Set.Internal.Set [Quantale.Letters])
+                   (t2 :: Data.Set.Internal.Set [Quantale.Letters]) ->
+                 case t1 of wild {
+                   Data.Set.Internal.Bin dt ds ds1 ds2
+                   -> case t2 of wild1 {
+                        Data.Set.Internal.Bin dt1 ds3 ds4 ds5
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.<=# dt dt1) of wild2 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> Data.Set.Internal.isProperSubsetOf_$sisSubsetOfX2
+                                  @ [Quantale.Letters]
+                                  dt1
+                                  ds3
+                                  ds4
+                                  ds5
+                                  dt
+                                  ds
+                                  ds1
+                                  ds2
+                                  Quantale.$fUnitalQuantaleSet_$s$fOrd[] }
+                        Data.Set.Internal.Tip -> GHC.Types.False }
+                   Data.Set.Internal.Tip
+                   -> case t2 of wild1 {
+                        Data.Set.Internal.Bin dt ds ds1 ds2
+                        -> GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.<=# 0# dt)
+                        Data.Set.Internal.Tip -> Quantale.$fUnitalQuantaleSet1 } }) -}
+8779170b9d2518df6ca5360516abc287
+  $fUnitalQuantaleSet_$sisSubsetOfX ::
+    Data.Set.Internal.Set [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters] -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [~] -}
+144de56bbb347d3029d4d922d0571cc2
+  $fUnitalQuantaleSet_$sunion ::
+    Data.Set.Internal.Set [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>, Inline: [~] -}
+10eb6008f21197b856d0de3c46766ca7
+  $fUnitalQuantaleSet_go ::
+    [[Quantale.Letters]]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+4f7dc2568da3c9ad765375960565d5c4
+  $s$fOrd[]_$c< ::
+    [Quantale.Letters] -> [Quantale.Letters] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                 case GHC.Classes.$fOrd[]_$ccompare
+                        @ Quantale.Letters
+                        Quantale.$fOrdLetters
+                        x
+                        y of wild {
+                   DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True }) -}
+88cb546fcf8e2d39af1deb562ca53f05
+  $s$fOrd[]_$c<= ::
+    [Quantale.Letters] -> [Quantale.Letters] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                 case GHC.Classes.$fOrd[]_$ccompare
+                        @ Quantale.Letters
+                        Quantale.$fOrdLetters
+                        x
+                        y of wild {
+                   DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False }) -}
+f8ce97201abae08e3a6d3292f031eb8e
+  $s$fOrd[]_$c> ::
+    [Quantale.Letters] -> [Quantale.Letters] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                 case GHC.Classes.$fOrd[]_$ccompare
+                        @ Quantale.Letters
+                        Quantale.$fOrdLetters
+                        x
+                        y of wild {
+                   DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True }) -}
+6d086f77a5c60fb9c326585bc6077948
+  $s$fOrd[]_$c>= ::
+    [Quantale.Letters] -> [Quantale.Letters] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                 case GHC.Classes.$fOrd[]_$ccompare
+                        @ Quantale.Letters
+                        Quantale.$fOrdLetters
+                        x
+                        y of wild {
+                   DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False }) -}
+dfd5ea9e02ef2949bd05291fed2daed6
+  $s$fOrd[]_$cmax ::
+    [Quantale.Letters] -> [Quantale.Letters] -> [Quantale.Letters]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                 case GHC.Classes.$fOrd[]_$ccompare
+                        @ Quantale.Letters
+                        Quantale.$fOrdLetters
+                        x
+                        y of wild {
+                   DEFAULT -> y GHC.Types.GT -> x }) -}
+093a3dd34eb520acc659e889ce4057d3
+  $s$fOrd[]_$cmin ::
+    [Quantale.Letters] -> [Quantale.Letters] -> [Quantale.Letters]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: [Quantale.Letters]) (y :: [Quantale.Letters]) ->
+                 case GHC.Classes.$fOrd[]_$ccompare
+                        @ Quantale.Letters
+                        Quantale.$fOrdLetters
+                        x
+                        y of wild {
+                   DEFAULT -> x GHC.Types.GT -> y }) -}
+31d97fa60d2c663dc8b4414f9bc948b6
+  $s$wsplitS ::
+    [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+    -> (# Data.Set.Internal.Set [Quantale.Letters],
+          Data.Set.Internal.Set [Quantale.Letters] #)
+  {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [~] -}
+89574d1ccfad932765bc891d3a5fc582
+  $sinsertR_$sgo3 ::
+    [Quantale.Letters]
+    -> [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U> -}
+9c10a44a5f2c04ee2f8c7fcf5835e30a
+  $sinsert_$sgo3 ::
+    [Quantale.Letters]
+    -> [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U> -}
+c419f7da4472c2ea04ff7b2f55429cac
+  $tc'Alpha :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4022981364255589430##
+                   5449626336426215208##
+                   Quantale.$trModule
+                   Quantale.$tc'Alpha2
+                   0#
+                   Quantale.$tc'Alpha1) -}
+55731edc43d1c9da51a36b4ba82e2e32
+  $tc'Alpha1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+782b950527fd64d0bbe414ae1f58f09c
+  $tc'Alpha2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tc'Alpha3) -}
+e2dbee25dd199786248d71bde19c7be5
+  $tc'Alpha3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Alpha"#) -}
+d905b7d2f6e994b6293da7e6a0cbd2a2
+  $tc'Beta :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7541610325690483074##
+                   1022504279120942840##
+                   Quantale.$trModule
+                   Quantale.$tc'Beta1
+                   0#
+                   Quantale.$tc'Alpha1) -}
+5b1f94a9986257dcfc1550205b31e5c5
+  $tc'Beta1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tc'Beta2) -}
+426a2013846a641f30cea03edcd50802
+  $tc'Beta2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Beta"#) -}
+cf49a4d7160a759302faa010af171207
+  $tc'C:UnitalQuantale :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5340713264382370669##
+                   17284773676866842283##
+                   Quantale.$trModule
+                   Quantale.$tc'C:UnitalQuantale2
+                   1#
+                   Quantale.$tc'C:UnitalQuantale1) -}
+f11abe19b1a7b4e371f6ec687d439bac
+  $tc'C:UnitalQuantale1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+6a3873dc89056a472367d82c4786b2a2
+  $tc'C:UnitalQuantale2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tc'C:UnitalQuantale3) -}
+6a796883d5f5f39a392263e1a35df59d
+  $tc'C:UnitalQuantale3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'C:UnitalQuantale"#) -}
+8205176317983e7c6fa4c1986b613926
+  $tc'Gamma :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10097724194823371734##
+                   3932641374223993975##
+                   Quantale.$trModule
+                   Quantale.$tc'Gamma1
+                   0#
+                   Quantale.$tc'Alpha1) -}
+c5fe7e36c49d5823d45c87bd20a86fe9
+  $tc'Gamma1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tc'Gamma2) -}
+9d28b871763b26621cbee9be0ea81c90
+  $tc'Gamma2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Gamma"#) -}
+710703eb2a75c0861a7db5c9d0958b09
+  $tc'VertexX :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1346005141390240638##
+                   10266198994465088397##
+                   Quantale.$trModule
+                   Quantale.$tc'VertexX2
+                   0#
+                   Quantale.$tc'VertexX1) -}
+52d9fea4a5faee2a1e131291b53c3904
+  $tc'VertexX1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+4d4fe810a86bce43e2bfdd77dbe0931d
+  $tc'VertexX2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tc'VertexX3) -}
+d741794434abfb522f65401e07059cba
+  $tc'VertexX3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'VertexX"#) -}
+2db7bedb357188f09105a16c857d4dba
+  $tc'VertexY :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8470008285911388529##
+                   2796300379137734616##
+                   Quantale.$trModule
+                   Quantale.$tc'VertexY1
+                   0#
+                   Quantale.$tc'VertexX1) -}
+24aaada63e62d5142f20959c7b402628
+  $tc'VertexY1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tc'VertexY2) -}
+4745d5d600ed4e64ec625b2d85eb35df
+  $tc'VertexY2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'VertexY"#) -}
+b1c7a5deb29b7397099790e3e826def9
+  $tc'VertexZ :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15573858554107470687##
+                   10847499650001419866##
+                   Quantale.$trModule
+                   Quantale.$tc'VertexZ1
+                   0#
+                   Quantale.$tc'VertexX1) -}
+49f14f91b2612eecb72daf2f12692077
+  $tc'VertexZ1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tc'VertexZ2) -}
+e0011195ee464e4998cefe45a9efd277
+  $tc'VertexZ2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'VertexZ"#) -}
+2903079cd0282b6d1199c78fb89a2d0c
+  $tcLetters :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10943136503772022934##
+                   7425682923263645992##
+                   Quantale.$trModule
+                   Quantale.$tcLetters1
+                   0#
+                   GHC.Types.krep$*) -}
+2752ddba67c1eb3e2f6ff9725e658a96
+  $tcLetters1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tcLetters2) -}
+2a135ba737e361098fea1696689a4388
+  $tcLetters2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Letters"#) -}
+71286a8883fa9ffc3750245cd21b2934
+  $tcMyVertices :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1249303627017536368##
+                   17964418044425922250##
+                   Quantale.$trModule
+                   Quantale.$tcMyVertices1
+                   0#
+                   GHC.Types.krep$*) -}
+9fffbe72a66b4b639dfb3eb7ca74ea3b
+  $tcMyVertices1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tcMyVertices2) -}
+4c5e3e546f0719cd45c7f8de97aa4317
+  $tcMyVertices2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MyVertices"#) -}
+e6c035c2f6c56152fb3aef400ad17e11
+  $tcUnitalQuantale :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8262318735232782162##
+                   3733501444133007467##
+                   Quantale.$trModule
+                   Quantale.$tcUnitalQuantale2
+                   0#
+                   Quantale.$tcUnitalQuantale1) -}
+dc180b451df0980685324ba507f21c17
+  $tcUnitalQuantale1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+f7548adf2e3e533d9ab591cdcd10a81f
+  $tcUnitalQuantale2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$tcUnitalQuantale3) -}
+ba0e9551b0433048aeab66ab629fbcc1
+  $tcUnitalQuantale3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("UnitalQuantale"#) -}
+9d37aa280865a0b0c487b1e21eb57749
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Quantale.$trModule3
+                   Quantale.$trModule1) -}
+07ee4019dfec84b732db58f9aefdbd52
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$trModule2) -}
+ddf241354f16da3b7b995d00954d66db
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Quantale"#) -}
+b546c3bba60b3bbeba2aa24c4caf55c0
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Quantale.$trModule4) -}
+2fd5defe801db9a6c828b798dc255b3e
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("applied-category-theory-course-0.1.0.0-IH3FBuu09qbANFynDqfOPB"#) -}
+e83cecf25cd235b488cd0c0da47e1444
+  $w$cshowsPrec ::
+    Quantale.Letters -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Quantale.Letters) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Quantale.Alpha
+                   -> GHC.Base.++ @ GHC.Types.Char Quantale.$fReadLetters15 w1
+                   Quantale.Beta
+                   -> GHC.Base.++ @ GHC.Types.Char Quantale.$fReadLetters11 w1
+                   Quantale.Gamma
+                   -> GHC.Base.++ @ GHC.Types.Char Quantale.$fReadLetters7 w1 }) -}
+5ce1c8bd2c8e956cd9295e60992414d8
+  $w$cshowsPrec1 ::
+    Quantale.MyVertices -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Quantale.MyVertices) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Quantale.VertexX
+                   -> GHC.Base.++ @ GHC.Types.Char Quantale.$fReadMyVertices15 w1
+                   Quantale.VertexY
+                   -> GHC.Base.++ @ GHC.Types.Char Quantale.$fReadMyVertices11 w1
+                   Quantale.VertexZ
+                   -> GHC.Base.++ @ GHC.Types.Char Quantale.$fReadMyVertices7 w1 }) -}
+624f46b7ad06f075c69c9ff6f68d87a6
+  $w$spowerQMatrices ::
+    [Quantale.MyVertices]
+    -> (Quantale.MyVertices -> Quantale.MyVertices -> Quantale.Cost)
+    -> GHC.Prim.Int#
+    -> Quantale.MyVertices
+    -> Quantale.MyVertices
+    -> Quantale.Cost
+  {- Arity: 5, Strictness: <L,U><L,C(C1(U))><S,U><L,U><L,U>,
+     Inline: [0] -}
+f1ebaf934dd6fd7ea449b18ca0b45731
+  $wgo3 ::
+    GHC.Prim.Int#
+    -> Data.Set.Internal.Set [Quantale.Letters]
+    -> [[Quantale.Letters]]
+    -> Data.Set.Internal.Set [Quantale.Letters]
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+7ba2142cc4d028ceec2c03ea622d2377
+  $wpowerQMatrices ::
+    (GHC.Classes.Eq a, Quantale.UnitalQuantale q) =>
+    [a] -> (a -> a -> q) -> GHC.Prim.Int# -> a -> a -> q
+  {- Arity: 7,
+     Strictness: <L,U(C(C1(U)),C(C1(U)))><L,U(U,A,C(C1(U)),C(U))><L,U><L,C(C1(U))><S,U><L,U><L,U>,
+     Inline: [0] -}
+ef1b816e3f91cc18b9df0a1e51aee89e
+  type Cost = GHC.Base.Maybe GHC.Types.Int
+e83cecf25cd235b488cd0c0da47e1444
+  data Letters = Alpha | Beta | Gamma
+5ce1c8bd2c8e956cd9295e60992414d8
+  data MyVertices = VertexX | VertexY | VertexZ
+1497ef2674af40386b5676d7c03dc862
+  type PowerSetStrings = Data.Set.Internal.Set [Quantale.Letters]
+c16dac2eeb6b8d6291902050f72e2020
+  class UnitalQuantale a where
+    unit :: a
+    po :: a -> a -> GHC.Types.Bool
+    monoidal :: a -> a -> a
+    myJoin :: [a] -> a
+    {-# MINIMAL unit, po, monoidal, myJoin #-}
+f680da47bec7b542a351040c1ccae119
+  allVertices :: [Quantale.MyVertices]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Quantale.MyVertices
+                   Quantale.VertexX
+                   Quantale.allVertices1) -}
+67340cd0369c8869e4cbba5d94f9fd13
+  allVertices1 :: [Quantale.MyVertices]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Quantale.MyVertices
+                   Quantale.VertexY
+                   Quantale.allVertices2) -}
+11ff7b72f8a363c48a00966fce29e796
+  allVertices2 :: [Quantale.MyVertices]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Quantale.MyVertices
+                   Quantale.VertexZ
+                   (GHC.Types.[] @ Quantale.MyVertices)) -}
+ac24bed06df87093d2562a2b14983cdd
+  example :: Quantale.Cost
+  {- Unfolding: (Quantale.$fUnitalQuantaleMaybe_$cmyJoin
+                   (Quantale.example_go Quantale.allVertices)) -}
+985da7a5fcc600c6cd0a35762570a1c8
+  example2 :: [Quantale.Cost]
+  {- Unfolding: (Quantale.example2_go Quantale.allVertices) -}
+50b00e00eaba3c35f21957b078327eba
+  example2_go :: [Quantale.MyVertices] -> [Quantale.Cost]
+  {- Arity: 1, Strictness: <S,1*U> -}
+34ed409d5cfb8d86fff0a45e1721025e
+  example_go :: [Quantale.MyVertices] -> [Quantale.Cost]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+a76b9cbf7785ba9083de26f15f94638b
+  greatestLowerBound ::
+    Quantale.Cost -> Quantale.Cost -> Quantale.Cost
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: GHC.Base.Maybe GHC.Types.Int)
+                   (x :: Quantale.Cost) ->
+                 case ds of wild {
+                   GHC.Base.Nothing -> x
+                   GHC.Base.Just ipv
+                   -> case x of wild1 {
+                        GHC.Base.Nothing -> wild
+                        GHC.Base.Just ipv1
+                        -> case ipv of wild2 { GHC.Types.I# x1 ->
+                           case ipv1 of wild3 { GHC.Types.I# y ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.<=# x1 y) of wild4 {
+                             GHC.Types.False -> wild1 GHC.Types.True -> wild } } } } }) -}
+c5cdd02e261aab8944cb535d218222df
+  multiplyQMatrices ::
+    Quantale.UnitalQuantale q =>
+    [b] -> (a -> b -> q) -> (b -> c -> q) -> a -> c -> q
+  {- Arity: 6, HasNoCafRefs,
+     Strictness: <S(LLLC(S)),U(A,A,C(C1(U)),1*C1(U))><L,1*U><L,C(C1(U))><L,C(C1(U))><L,U><L,U>,
+     Unfolding: (\ @ q
+                   @ b
+                   @ a
+                   @ c
+                   ($dUnitalQuantale :: Quantale.UnitalQuantale q)
+                   (allY :: [b])
+                   (matrixM :: a -> b -> q)
+                   (matrixN :: b -> c -> q)
+                   (x :: a)
+                   (z :: c) ->
+                 Quantale.myJoin
+                   @ q
+                   $dUnitalQuantale
+                   (letrec {
+                      go2 :: [b] -> [q] {- Arity: 1, Strictness: <S,1*U> -}
+                      = \ (ds :: [b]) ->
+                        case ds of wild {
+                          [] -> GHC.Types.[] @ q
+                          : y ys
+                          -> GHC.Types.:
+                               @ q
+                               (Quantale.monoidal
+                                  @ q
+                                  $dUnitalQuantale
+                                  (matrixM x y)
+                                  (matrixN y z))
+                               (go2 ys) }
+                    } in
+                    go2 allY)) -}
+d5048173384235ff1805d2875832a6a9
+  powerQMatrices ::
+    (GHC.Classes.Eq a, Quantale.UnitalQuantale q) =>
+    [a] -> (a -> a -> q) -> GHC.Types.Int -> a -> a -> q
+  {- Arity: 7,
+     Strictness: <L,U(C(C1(U)),C(C1(U)))><L,U(U,A,C(C1(U)),C(U))><L,U><L,C(C1(U))><S(S),1*U(U)><L,U><L,U>,
+     Inline: [0],
+     Unfolding: InlineRule (7, True, False)
+                (\ @ a
+                   @ q
+                   (w :: GHC.Classes.Eq a)
+                   (w1 :: Quantale.UnitalQuantale q)
+                   (w2 :: [a])
+                   (w3 :: a -> a -> q)
+                   (w4 :: GHC.Types.Int)
+                   (w5 :: a)
+                   (w6 :: a) ->
+                 case w4 of ww { GHC.Types.I# ww1 ->
+                 Quantale.$wpowerQMatrices @ a @ q w w1 w2 w3 ww1 w5 w6 }) -}
+98ddcb9373c228062506ed4aa53f1ca3
+  weightGraph ::
+    Quantale.MyVertices -> Quantale.MyVertices -> Quantale.Cost
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Quantale.MyVertices)
+                   (ds1 :: Quantale.MyVertices) ->
+                 case ds of wild {
+                   Quantale.VertexX
+                   -> case ds1 of wild1 {
+                        Quantale.VertexX -> Quantale.$fUnitalQuantaleMaybe_$cunit
+                        Quantale.VertexY -> Quantale.weightGraph3
+                        Quantale.VertexZ -> Quantale.weightGraph1 }
+                   Quantale.VertexY
+                   -> case ds1 of wild1 {
+                        Quantale.VertexX -> Quantale.weightGraph1
+                        Quantale.VertexY -> Quantale.$fUnitalQuantaleMaybe_$cunit
+                        Quantale.VertexZ -> GHC.Base.Nothing @ GHC.Types.Int }
+                   Quantale.VertexZ
+                   -> case ds1 of wild1 {
+                        Quantale.VertexX -> GHC.Base.Nothing @ GHC.Types.Int
+                        Quantale.VertexY -> Quantale.weightGraph3
+                        Quantale.VertexZ -> Quantale.$fUnitalQuantaleMaybe_$cunit } }) -}
+bdc8714bd6680a71ced872a7b6a2d7db
+  weightGraph1 :: GHC.Base.Maybe GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GHC.Types.Int Quantale.weightGraph2) -}
+fa69b27848d5aeb63f1ebb0e4c8c605d
+  weightGraph2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
+9fc54cb193af17d6802d9c6d5261931f
+  weightGraph3 :: GHC.Base.Maybe GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GHC.Types.Int Quantale.weightGraph4) -}
+5c323032dc3a956ad7d4830a1e3ac13d
+  weightGraph4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
+instance [safe] GHC.Classes.Eq [Quantale.Letters]
+  = Quantale.$fEqLetters
+instance [safe] GHC.Classes.Eq [Quantale.MyVertices]
+  = Quantale.$fEqMyVertices
+instance [safe] GHC.Classes.Ord [Quantale.Letters]
+  = Quantale.$fOrdLetters
+instance [safe] GHC.Read.Read [Quantale.Letters]
+  = Quantale.$fReadLetters
+instance [safe] GHC.Read.Read [Quantale.MyVertices]
+  = Quantale.$fReadMyVertices
+instance [safe] GHC.Show.Show [Quantale.Letters]
+  = Quantale.$fShowLetters
+instance [safe] GHC.Show.Show [Quantale.MyVertices]
+  = Quantale.$fShowMyVertices
+instance [safe] Quantale.UnitalQuantale [GHC.Base.Maybe]
+  = Quantale.$fUnitalQuantaleMaybe
+instance [safe] Quantale.UnitalQuantale [Data.Set.Internal.Set]
+  = Quantale.$fUnitalQuantaleSet
+"SPEC/Quantale $fEq[] @ Letters" forall (v :: GHC.Classes.Eq
+                                                Quantale.Letters)
+  GHC.Classes.$fEq[] @ Quantale.Letters v
+  = Quantale.$fUnitalQuantaleSet_$s$fEq[]
+"SPEC/Quantale $fEq[]_$c/= @ Letters" forall ($dEq :: GHC.Classes.Eq
+                                                        Quantale.Letters)
+  GHC.Classes.$fEq[]_$c/= @ Quantale.Letters $dEq
+  = Quantale.$fUnitalQuantaleSet_$s$fEq[]_$c/=
+"SPEC/Quantale $fOrd[] @ Letters" forall (v :: GHC.Classes.Ord
+                                                 Quantale.Letters)
+  GHC.Classes.$fOrd[] @ Quantale.Letters v
+  = Quantale.$fUnitalQuantaleSet_$s$fOrd[]
+"SPEC/Quantale $fOrd[]_$c< @ Letters" forall ($dOrd :: GHC.Classes.Ord
+                                                         Quantale.Letters)
+  GHC.Classes.$fOrd[]_$c< @ Quantale.Letters $dOrd
+  = Quantale.$s$fOrd[]_$c<
+"SPEC/Quantale $fOrd[]_$c<= @ Letters" forall ($dOrd :: GHC.Classes.Ord
+                                                          Quantale.Letters)
+  GHC.Classes.$fOrd[]_$c<= @ Quantale.Letters $dOrd
+  = Quantale.$s$fOrd[]_$c<=
+"SPEC/Quantale $fOrd[]_$c> @ Letters" forall ($dOrd :: GHC.Classes.Ord
+                                                         Quantale.Letters)
+  GHC.Classes.$fOrd[]_$c> @ Quantale.Letters $dOrd
+  = Quantale.$s$fOrd[]_$c>
+"SPEC/Quantale $fOrd[]_$c>= @ Letters" forall ($dOrd :: GHC.Classes.Ord
+                                                          Quantale.Letters)
+  GHC.Classes.$fOrd[]_$c>= @ Quantale.Letters $dOrd
+  = Quantale.$s$fOrd[]_$c>=
+"SPEC/Quantale $fOrd[]_$cmax @ Letters" forall ($dOrd :: GHC.Classes.Ord
+                                                           Quantale.Letters)
+  GHC.Classes.$fOrd[]_$cmax @ Quantale.Letters $dOrd
+  = Quantale.$s$fOrd[]_$cmax
+"SPEC/Quantale $fOrd[]_$cmin @ Letters" forall ($dOrd :: GHC.Classes.Ord
+                                                           Quantale.Letters)
+  GHC.Classes.$fOrd[]_$cmin @ Quantale.Letters $dOrd
+  = Quantale.$s$fOrd[]_$cmin
+"SPEC/Quantale $wsplitS @ [Letters]" [0] forall (w :: GHC.Classes.Ord
+                                                        [Quantale.Letters])
+  Data.Set.Internal.$wsplitS @ [Quantale.Letters] w
+  = Quantale.$s$wsplitS
+"SPEC/Quantale fromList @ [Letters]" forall ($dOrd :: GHC.Classes.Ord
+                                                        [Quantale.Letters])
+  Data.Set.Internal.fromList @ [Quantale.Letters] $dOrd
+  = Quantale.$fUnitalQuantaleSet_$sfromList
+"SPEC/Quantale isSubsetOf @ [Letters]" forall ($dOrd :: GHC.Classes.Ord
+                                                          [Quantale.Letters])
+  Data.Set.Internal.isSubsetOf @ [Quantale.Letters] $dOrd
+  = Quantale.$fUnitalQuantaleSet_$sisSubsetOf
+"SPEC/Quantale isSubsetOfX @ [Letters]" forall ($dOrd :: GHC.Classes.Ord
+                                                           [Quantale.Letters])
+  Data.Set.Internal.isSubsetOfX @ [Quantale.Letters] $dOrd
+  = Quantale.$fUnitalQuantaleSet_$sisSubsetOfX
+"SPEC/Quantale union @ [Letters]" forall ($dOrd :: GHC.Classes.Ord
+                                                     [Quantale.Letters])
+  Data.Set.Internal.union @ [Quantale.Letters] $dOrd
+  = Quantale.$fUnitalQuantaleSet_$sunion
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
