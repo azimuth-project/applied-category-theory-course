@@ -226,8 +226,6 @@ collage (PS.Poset (setA,poA)) (PS.Poset (setB,poB)) phi = PS.Poset (set,po)
           po (Left a1) (Right b2) = phi a1 b2
           po _ _ = False
 
--- Example is untested, probably have some arrows flipped the wrong way around
--- didn't keep careful track of which is op and which is not.
 data FeasibilityExXSetD = North | South | East | West
 feasibilityExXSet :: [FeasibilityExXSetD]
 feasibilityExXSet = [North,South,East,West]
