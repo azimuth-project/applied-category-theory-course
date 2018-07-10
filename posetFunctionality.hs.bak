@@ -226,7 +226,14 @@ collage (PS.Poset (setA,poA)) (PS.Poset (setB,poB)) phi = PS.Poset (set,po)
           po (Left a1) (Right b2) = phi a1 b2
           po _ _ = False
 
-data FeasibilityExXSetD = North | South | East | West
+data FeasibilityRelation a b = FeasibilityRelation{source :: (PS.Poset a), target :: (PS.Poset b) , phi :: (a -> b -> Bool)}
+
+collageF :: FeasibilityRelation a b -> PS.Poset (Either a b)
+collageF feasibility1 = collage (source feasibility1) (target feasibility1) (phi feasibility1)
+
+-- Example is untested, probably have some arrows flipped the wrong way around
+-- didn't keep careful track of which is op and which is not.
+data FeasibilityExXSetD = North | South | East | West deriving (Show,Read,Eq)
 feasibilityExXSet :: [FeasibilityExXSetD]
 feasibilityExXSet = [North,South,East,West]
 feasibilityExXpo South _ = True
@@ -237,7 +244,7 @@ feasibilityExXpo East North = True
 feasibilityExXpo North North = True
 feasibilityExXpo _ _ = False
 feasibilityExX = PS.Poset (feasibilityExXSet,feasibilityExXpo)
-data FeasibilityExYSetD = A | B | C | D | E
+data FeasibilityExYSetD = A | B | C | D | E  deriving (Show,Read,Eq)
 feasibilityExYSet :: [FeasibilityExYSetD]
 feasibilityExYSet = [A,B,C,D,E]
 feasibilityExYpo A _ = True
@@ -253,8 +260,16 @@ feasibilityExPhiHelper South A = True
 feasibilityExPhiHelper East B = True
 feasibilityExPhiHelper North C = True
 feasibilityExPhiHelper North E = True
-feasibilityExPhiHelper _ _ = True
+feasibilityExPhiHelper _ _ = False
 feasibilityExPhi :: FeasibilityExXSetD -> FeasibilityExYSetD -> Bool
 feasibilityExPhi x1 y1 = or [(feasibilityExXpo x1 x2) && (feasibilityExYpo y2 y1) | y2 <- feasibilityExYSet, x2 <- feasibilityExXSet, (feasibilityExPhiHelper x2 y2)]
 feasibilityEx :: PS.Poset (Either FeasibilityExXSetD FeasibilityExYSetD)
 feasibilityEx = collage feasibilityExX feasibilityExY feasibilityExPhi
+feasibilityEx2 = [((s1,s2),(getPO feasibilityEx) s1 s2) | s1 <- allEx, s2 <- allEx] where allEx = (getSet feasibilityEx)
+
+composePhi :: (a -> b -> Bool) -> (b -> c -> Bool) -> [b] -> a -> c -> Bool
+composePhi phi1 phi2 allYs aTest cTest = or [(phi1 aTest bTest) && (phi2 bTest cTest) | bTest <- allYs]
+
+composeFeasibilityRelations :: FeasibilityRelation a b -> FeasibilityRelation b c -> FeasibilityRelation a c
+composeFeasibilityRelations feasible1 feasible2 = FeasibilityRelation{source=(source feasible1),target=(target feasible2),
+                                                                      phi=(composePhi (phi feasible1) (phi feasible2) (getSet (target feasible1)))}
