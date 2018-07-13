@@ -6,7 +6,7 @@
 module Quantale where
 
 import qualified Data.Set as Set
---import qualified Data.Number.Fin.Integer as Fin
+import qualified Math.Combinatorics.Poset as PS
 import Data.Maybe
 
 class UnitalQuantale a where
@@ -36,6 +36,10 @@ instance UnitalQuantale Cost where
     unit = Just 0
     myJoin [] = Nothing
     myJoin (x:xs) = greatestLowerBound x (myJoin xs)
+
+reachability :: Cost -> Bool
+reachability (Just x) = True
+reachability Nothing = False
 
 -- power set of strings
 data Letters = Alpha | Beta | Gamma deriving (Eq,Read,Show,Ord)
@@ -74,3 +78,35 @@ weightGraph _ _ = Nothing
 example = multiplyQMatrices allVertices weightGraph weightGraph VertexZ VertexX
 -- all of the entries M_Y^3 read into a single list instead of a matrix
 example2 = [powerQMatrices allVertices weightGraph 3 x y|x<-allVertices, y<-allVertices]
+
+-- category enriched in a quantale especially cost enriched, feasibility relations with costs
+
+newtype QuantaleEnriched t q = QuantaleEnriched {myData :: ([t],t->t->q)}
+
+toQuantaleEnriched :: (Eq t, UnitalQuantale q) => [t] -> (t -> t -> q) -> QuantaleEnriched t q
+toQuantaleEnriched underlyingSet morphisms = QuantaleEnriched {myData = (underlyingSet,morphisms)}
+
+toQuantaleEnriched2 :: (Eq t, UnitalQuantale q) => [t] -> (t -> t -> q) -> Int -> QuantaleEnriched t q
+toQuantaleEnriched2 allVertices oneStepMorphisms maxSteps = toQuantaleEnriched allVertices (powerQMatrices allVertices oneStepMorphisms maxSteps)
+
+-- same as example2 but wrapped into the newtype
+example3 = toQuantaleEnriched2 allVertices weightGraph 5
+
+toPoset :: QuantaleEnriched t q -> (q -> Bool) -> PS.Poset t
+toPoset enriched reduction = PS.Poset (set,\x y -> reduction $ poOne x y) where (set,poOne)=(myData enriched)
+
+example4 = toPoset example3 reachability
+
+quantaleCollage :: (Eq a,Eq t, UnitalQuantale q) => Int -> QuantaleEnriched t q -> QuantaleEnriched a q -> (t -> a -> q) -> QuantaleEnriched (Either t a) q
+quantaleCollage upperBound enriched1 enriched2 connection = toQuantaleEnriched2 fullSet oneStepMorphisms upperBound
+        where setA = fst $ myData enriched1
+              setB = fst $ myData enriched2
+              morphismsA = snd $ myData enriched1
+              morphismsB = snd $ myData enriched2
+              fullSet = map Left setA ++ map Right setB
+              oneStepMorphisms (Left a1) (Left a2) = morphismsA a1 a2
+              oneStepMorphisms (Right b1) (Right b2) = morphismsB b1 b2
+              oneStepMorphisms (Left a1) (Right b2) = connection a1 b2
+              oneStepMorphisms _ _ = myJoin []
+
+-- example from Lecture 59
