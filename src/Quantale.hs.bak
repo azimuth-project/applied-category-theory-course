@@ -108,3 +108,37 @@ quantaleCollage upperBound enriched1 enriched2 connection = toQuantaleEnriched2 
               oneStepMorphisms (Right b1) (Right b2) = morphismsB b1 b2
               oneStepMorphisms (Left a1) (Right b2) = connection a1 b2
               oneStepMorphisms _ _ = myJoin []
+
+-- example from Lecture 59
+-- multiplied by 10 everywhere to keep integers, as an overestimation allowed 5 step paths at most
+-- the shortest paths should be within that coarse upper bound, but didn't check
+-- Example is untested
+data Example59C = North | South | East | West deriving (Show,Read,Eq)
+example59XSet :: [Example59C]
+example59XSet = [North,South,East,West]
+example59XMor :: Example59C -> Example59C -> Cost
+example59XMor South West = Just 30
+example59XMor South East = Just 20
+example59XMor West North = Just 10
+example59XMor East North = Just 50
+example59XMor East South = Just 4
+example59XMor _ _ = Nothing
+example59CQE :: QuantaleEnriched Example59C Cost
+example59CQE = toQuantaleEnriched2 example59XSet example59XMor 5
+data Example59D = A | B | C | D | E deriving (Show,Read,Eq)
+example59YSet :: [Example59D]
+example59YSet = [A,B,C,D,E]
+example59YMor :: Example59D -> Example59D -> Cost
+example59YMor A B = Just 70
+example59YMor A C = Just 0
+example59YMor B D = Just 20
+example59YMor _ _ = Nothing
+example59DQE :: QuantaleEnriched Example59D Cost
+example59DQE = toQuantaleEnriched2 example59YSet example59YMor 5
+connector :: Example59C -> Example59D -> Cost
+connector South A = Just 90
+connector East B = Just 120
+connector North C = Just 47
+connector North E = Just 80
+costEnrichedCollage :: QuantaleEnriched (Either Example59C Example59D) Cost
+costEnrichedCollage = quantaleCollage 5 example59CQE example59DQE connector
