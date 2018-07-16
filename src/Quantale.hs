@@ -18,14 +18,17 @@ class UnitalQuantale a where
 -- change int to other numeric types if desired, Nothing stands for +\infty
 type Cost = Maybe Int
 
-greatestLowerBound :: Cost -> Cost -> Cost
+-- the default instance of Ord that comes from Maybe n with (Ord n) puts Nothing <= everything
+-- we want it to be >= everything
+
+greatestLowerBound :: (Ord a) => Maybe a -> Maybe a -> Maybe a
 greatestLowerBound Nothing x = x
 greatestLowerBound x Nothing = x
 greatestLowerBound (Just x) (Just y)
                                     | x<=y = Just x
                                     | otherwise = Just y
 
-instance UnitalQuantale Cost where
+instance (Num a, Ord a) => UnitalQuantale (Maybe a) where
     po Nothing Nothing = True
     po Nothing (Just x) = True
     po (Just x) Nothing = False
@@ -37,7 +40,7 @@ instance UnitalQuantale Cost where
     myJoin [] = Nothing
     myJoin (x:xs) = greatestLowerBound x (myJoin xs)
 
-reachability :: Cost -> Bool
+reachability :: Num a => Maybe a -> Bool
 reachability (Just x) = True
 reachability Nothing = False
 
@@ -81,6 +84,7 @@ example2 = [powerQMatrices allVertices weightGraph 3 x y|x<-allVertices, y<-allV
 
 -- category enriched in a quantale especially cost enriched, feasibility relations with costs
 
+-- Eq t, UnitalQuantale q is not enforced when creating a QuantaleEnriched, unless you do it through the below two functions 
 newtype QuantaleEnriched t q = QuantaleEnriched {myData :: ([t],t->t->q)}
 
 toQuantaleEnriched :: (Eq t, UnitalQuantale q) => [t] -> (t -> t -> q) -> QuantaleEnriched t q
